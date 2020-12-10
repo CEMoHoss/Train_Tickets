@@ -1,0 +1,44 @@
+ticketType = input('Enter your ticket type (1/2) : ')
+
+seatNumber = input('Enter your seat number : ')
+
+try:
+    ticketType = int(ticketType)
+    seatNumber = int(seatNumber)
+except:
+    ticketType = -1
+    seatNumber = -1
+
+if ticketType != -1 and seatNumber != -1:
+
+    if ticketType == 2:
+
+        if 64 >= seatNumber >= 1:
+            remainder = seatNumber % 4
+
+            if remainder == 0 or remainder == 1:
+                print('Window')
+
+            else:
+                print('Isle')
+        else:
+            print('Enter a valid seat number (at max 64)')
+
+    elif ticketType == 1:  
+
+        if 47 >= seatNumber >= 1:
+            remainder = seatNumber % 3
+            if remainder == 0 or remainder == 1 or seatNumber == 47:
+                print('Window')
+
+            else:
+                print('Isle')
+
+        else:
+            print('Enter a valid seat number (at max 47)')
+
+    else:
+        print('please enter a valid ticket type')
+
+else:
+    print('Please enter valid values')
